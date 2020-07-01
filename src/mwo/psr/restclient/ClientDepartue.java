@@ -100,10 +100,9 @@ try {
 
     }
     catch (Exception ex){
-         System.out.println("Blad wprowadzania: " );
-        //ex.printStackTrace();
+         System.out.println("Blad wprowadzania. " );
     }
-        //return stop;
+
         return new ArrayList<Stop>();
     }
 
@@ -129,7 +128,7 @@ try {
                 .request(MediaType.APPLICATION_JSON)
                 .get(Departures.class);
 
-        System.out.println("Below connection for: " + dep.getStopName().toString());
+        System.out.println("Below connection for: " + dep.getStopName());
         System.out.println("The nearest departures: " + dep.getActual() + "\n");
     }
 
