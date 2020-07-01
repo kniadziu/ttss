@@ -1,10 +1,10 @@
 # ttss
-Software use Rest for taking data frob website www.ttss.krakow.pl
+Software is using Rest for taking data from website www.ttss.krakow.pl
 
 If you run this app, you will be able to take timetable for buses located i Krakow (Poland)
 Project covers also polish letters.
 
 USAGE.
-put name of stop full name or a part. If you put part, app wil list all stops which fullfil condition.
-The you are able to put correct full name of stop, you are looking for.
-As a result you system will print tehe nearest arrival of buses. 
+put the full name or a part of stop. If you put part, app will list all stops which fullfil condition.
+Then you are able to put correct full name of stop, you are looking for.
+As a result, system will print the nearest arrival of buses. 
