@@ -47,6 +47,7 @@ public class ClientDepartue {
                 getTimetable(list.get(1).getId());
             } else {
                 System.out.println(name + " stop was not found. Please try again.");
+
             }
 
 
@@ -70,7 +71,21 @@ public class ClientDepartue {
     }
 
     public List<Stop> getStops(String stopName) {
-        stopName = stopName.replace(" ", "+").replace("�", "&oacute;");
+        stopName = stopName.replace(" ", "+")
+                .replace("ó", "%C3%B3")
+                .replace("ą", "%C4%85")
+                .replace("ć", "%C4%87")
+                .replace("ę", "%C4%99")
+                .replace("ł", "%C5%82")
+                .replace("ń", "%C5%84")
+                .replace("ś", "%C5%9B")
+                .replace("ź", "%C5%BA")
+                .replace("ż", "%C5%BC")
+                .replace("Ł", "%C5%81")
+                .replace("Ś", "%C5%9A")
+                .replace("Ż", "%C5%BB")
+        ;
+
         String target1 = "http://www.ttss.krakow.pl/internetservice/services/lookup/autocomplete/json?query=" + stopName + "&mode=departue&language=pl";
 try {
     List<Stop> stop = client
@@ -97,7 +112,9 @@ try {
         System.out.printf("-----------------------------------------------------------------------\n");
         for (Stop stop : stops) {
             if (stop.getId() != null) {
-                System.out.printf("|  %-10s  |  %-50s  |\n", stop.getId(), stop.getName().replace("&oacute;","�"));
+                System.out.printf("|  %-10s  |  %-50s  |\n", stop.getId(), stop.getName()
+                        .replace("&oacute;","ó")
+                .replace("&#261;","ą"));
             }
         }
         System.out.printf("-----------------------------------------------------------------------\n");
