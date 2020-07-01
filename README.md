@@ -1,7 +1,7 @@
 # ttss
 Software is using Rest for taking data from website www.ttss.krakow.pl
 
-If you run this app, you will be able to take timetable for buses located i Krakow (Poland)
+If you run this app, you will be able to take timetable for buses located in Krakow (Poland)
 Project covers also polish letters.
 
 USAGE.
