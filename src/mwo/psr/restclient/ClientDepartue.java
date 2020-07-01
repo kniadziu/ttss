@@ -71,6 +71,7 @@ public class ClientDepartue {
     }
 
     public List<Stop> getStops(String stopName) {
+        //tablica konwersji znaków  UTF-8   https://www.ia.pw.edu.pl/~jurek/js/kody/
         stopName = stopName.replace(" ", "+")
                 .replace("ó", "%C3%B3")
                 .replace("ą", "%C4%85")
