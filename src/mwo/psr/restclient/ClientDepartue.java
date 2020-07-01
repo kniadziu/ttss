@@ -13,6 +13,7 @@ import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClientDepartue {
@@ -71,15 +72,23 @@ public class ClientDepartue {
     public List<Stop> getStops(String stopName) {
         stopName = stopName.replace(" ", "+").replace("ó", "&oacute;");
         String target1 = "http://www.ttss.krakow.pl/internetservice/services/lookup/autocomplete/json?query=" + stopName + "&mode=departue&language=pl";
-
-        List<Stop> stop = client
-                .target(target1)
-                .request(MediaType.APPLICATION_JSON)
-                .get(Response.class)
-                .readEntity(new GenericType<List<Stop>>() {
-                });
+try {
+    List<Stop> stop = client
+            .target(target1)
+            .request(MediaType.APPLICATION_JSON)
+            .get(Response.class)
+            .readEntity(new GenericType<List<Stop>>() {
+            });
 
         return stop;
+
+    }
+    catch (Exception ex){
+         System.out.println("Blad wprowadzania: " );
+        //ex.printStackTrace();
+    }
+        //return stop;
+        return new ArrayList<Stop>();
     }
 
     public void listStops(List<Stop> stops) {
