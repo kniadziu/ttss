@@ -98,12 +98,12 @@ public class ClientDepartue {
 
 
         Departures dep = client
-                .target("http://www.ttss.krakow.pl/internetservice/services/passageInfo/stopPassages/stop?stop=" + id + "&mode=departure&language=pl")
+                .target("http://www.ttss.krakow.pl/internetservice/services/passageInfo/stopPassages/stop?stop=" + id.trim() + "&mode=departure&language=pl")
                 .request(MediaType.APPLICATION_JSON)
                 .get(Departures.class);
 
         System.out.println("Below connection for: " + dep.getStopName().toString());
-        System.out.println("The nearest departures: " + dep.getActual().toString() + "\n");
+        System.out.println("The nearest departures: " + dep.getActual() + "\n");
     }
 
 
@@ -111,6 +111,7 @@ public class ClientDepartue {
         client = ClientBuilder.newClient();
         client.register(JacksonJsonProvider.class);
     }
+
 
 
 }
