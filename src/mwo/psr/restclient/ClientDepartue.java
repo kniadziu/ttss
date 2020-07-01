@@ -38,7 +38,7 @@ public class ClientDepartue {
             list = client.getStops(name);
             if (list.size() > 2) {
                 System.out.println("I found " + (list.size() - 1) + " stops.");
-                System.out.println("Please write one from below stop name:");
+                System.out.println("Please write correct full name of stop:");
                 listStops(list);
             } else if (list.size() == 2){
 
