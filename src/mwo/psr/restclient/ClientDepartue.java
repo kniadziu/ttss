@@ -29,7 +29,7 @@ public class ClientDepartue {
         List<Stop> list;
 
         System.out.println("-----------------------------------------------------");
-        System.out.println("|Welcome to TTSS Krakow                              |");
+        System.out.println("|Welcome to TTSS Krakow                             |");
         System.out.println("-----------------------------------------------------");
 
 
@@ -84,7 +84,7 @@ public class ClientDepartue {
 
     public void listStops(List<Stop> stops) {
         System.out.printf("-----------------------------------------------------------------------\n");
-        System.out.printf("|  %-10s  |  %-70s  |\n", "Id", "Stop Name");
+        System.out.printf("|  %-10s  |  %-50s  |\n", "Id", "Stop Name");
         System.out.printf("-----------------------------------------------------------------------\n");
         for (Stop stop : stops) {
             if (stop.getId() != null) {
