@@ -69,7 +69,7 @@ public class ClientDepartue {
     }
 
     public List<Stop> getStops(String stopName) {
-        stopName = stopName.replace(" ", "+");
+        stopName = stopName.replace(" ", "+").replace("ó", "&oacute;");
         String target1 = "http://www.ttss.krakow.pl/internetservice/services/lookup/autocomplete/json?query=" + stopName + "&mode=departue&language=pl";
 
         List<Stop> stop = client
@@ -88,7 +88,7 @@ public class ClientDepartue {
         System.out.printf("-----------------------------------------------------------------------\n");
         for (Stop stop : stops) {
             if (stop.getId() != null) {
-                System.out.printf("|  %-10s  |  %-50s  |\n", stop.getId(), stop.getName());
+                System.out.printf("|  %-10s  |  %-50s  |\n", stop.getId(), stop.getName().replace("&oacute;","ó"));
             }
         }
         System.out.printf("-----------------------------------------------------------------------\n");
